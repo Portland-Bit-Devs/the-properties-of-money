@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties of Money</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 20px auto; /* Keep vertical margin, remove max-width constraint */
+            padding: 0 20px;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center; /* Center the app horizontally */
+        }
+
+        .app-container {
+            border: 1px solid #e0e0e0; /* Thin border */
+            padding: 10px; /* Reduced padding for a tighter fit */
+            border-radius: 8px;
+            display: inline-block; /* Shrink-wrap to content width */
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+            margin: 0 0 20px 0; /* Bottom spacing only */
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+            width: 100%; /* Span the container */
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for stacking */
+            gap: 10px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .header-row {
+            display: grid;
+            grid-template-columns: 80px 148px minmax(72px, max-content) minmax(72px, max-content) minmax(72px, max-content);
+            gap: 10px;
+        }
+
+        .header {
+            font-weight: 700;
+            background-color: #2d2d2d;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .header:first-child { /* Empty label column in header */
+            background-color: transparent;
+            border: none;
+        }
+
+        .cell {
+            padding: 15px;
+            border: 1px solid #444;
+            background-color: #252525;
+            border-radius: 8px;
+        }
+
+        /* Hide empty cells in the first column of group wrappers */
+        .group-wrapper .cell:nth-child(5n+1) {
+            visibility: hidden; /* Hides the cell but keeps grid space */
+            border: none;
+            background-color: transparent;
+            padding: 0; /* Remove padding to minimize visual impact */
+        }
+
+        /* Common styles for group wrappers */
+        .group-wrapper {
+            position: relative;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 80px 148px minmax(72px, max-content) minmax(72px, max-content) minmax(72px, max-content);
+            gap: 10px;
+            margin-bottom: 20px; /* Space between groups */
+        }
+
+        /* Vertical label styling */
+        .vertical-label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            color: #e0e0e0;
+            font-weight: 700;
+            font-size: 16px;
+            width: 60px;
+            text-align: center;
+        }
+
+        /* Color gradient classes from red (1) to green (5) */
+        .grade-1 { background-color: #cc0000; color: #fff; }
+        .grade-2 { background-color: #e65c00; color: #fff; }
+        .grade-3 { background-color: #cca300; color: #fff; }
+        .grade-4 { background-color: #66cc00; color: #fff; }
+        .grade-5 { background-color: #00b300; color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <h1>Comparison Of Monetary Properties</h1>
+        <div class="container">
+            <div class="grid">
+                <!-- Headers -->
+                <div class="header-row">
+                    <div class="header"></div> <!-- Empty column for label space -->
+                    <div class="header">Monetary Property</div>
+                    <div class="header">Gold</div>
+                    <div class="header">Bitcoin</div>
+                    <div class="header">Cash</div>
+                </div>
+
+                <!-- Time Group (First) -->
+                <div class="group-wrapper" id="time-group">
+                    <!-- Scarcity -->
+                    <div class="cell"></div> <!-- Empty column for label -->
+                    <div class="cell">Scarcity</div>
+                    <div class="cell grade-4">4</div>
+                    <div class="cell grade-5">5</div>
+                    <div class="cell grade-2">2</div>
+
+                    <!-- Durability -->
+                    <div class="cell"></div>
+                    <div class="cell">Durability</div>
+                    <div class="cell grade-5">5</div>
+                    <div class="cell grade-4">4</div>
+                    <div class="cell grade-3">3</div>
+
+                    <!-- Immutability -->
+                    <div class="cell"></div>
+                    <div class="cell">Immutability</div>
+                    <div class="cell grade-4">4</div>
+                    <div class="cell grade-5">5</div>
+                    <div class="cell grade-1">1</div>
+
+                    <div class="vertical-label">Across Time</div>
+                </div>
+
+                <!-- Space Group (Second) -->
+                <div class="group-wrapper" id="space-group">
+                    <!-- Acceptability -->
+                    <div class="cell"></div>
+                    <div class="cell">Acceptability</div>
+                    <div class="cell grade-3">3</div>
+                    <div class="cell grade-2">2</div>
+                    <div class="cell grade-5">5</div>
+
+                    <!-- Portability -->
+                    <div class="cell"></div>
+                    <div class="cell">Portability</div>
+                    <div class="cell grade-2">2</div>
+                    <div class="cell grade-5">5</div>
+                    <div class="cell grade-4">4</div>
+
+                    <div class="vertical-label">Across Space</div>
+                </div>
+
+                <!-- Scales Group (Third) -->
+                <div class="group-wrapper" id="scales-group">
+                    <!-- Divisibility -->
+                    <div class="cell"></div>
+                    <div class="cell">Divisibility</div>
+                    <div class="cell grade-3">3</div>
+                    <div class="cell grade-5">5</div>
+                    <div class="cell grade-4">4</div>
+
+                    <!-- Fungibility -->
+                    <div class="cell"></div>
+                    <div class="cell">Fungibility</div>
+                    <div class="cell grade-5">5</div>
+                    <div class="cell grade-4">4</div>
+                    <div class="cell grade-5">5</div>
+
+                    <div class="vertical-label">Across Scales</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
