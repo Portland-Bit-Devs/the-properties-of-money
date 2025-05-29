@@ -2,7 +2,7 @@
 
 An HTML page to generate a diagram of The Properties Of Money
 
-![alt text](https://github.com/Portland-Bit-Devs/the-properties-of-money/blob/main/Screenshot.png)
+![alt text](https://github.com/Portland-Bit-Devs/the-properties-of-money/blob/main/money.png)
 
 ## Source
 
